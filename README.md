@@ -1,6 +1,6 @@
 # side-hustle-task
 Full name: Oladele Tobiloba
-Slack ID: SH-IT-0046
+Slack ID: oluwatobiloba
 Summary of the video==>
 The Video breaks down the basics of the git for beginners. The video talks about git as version control system for tracking changes in computer files.We learnt about 
 the concepts and importance of using git which includes :
