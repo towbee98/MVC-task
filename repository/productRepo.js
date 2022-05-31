@@ -15,15 +15,23 @@ exports.findById = async (id) => {
   return products;
 };
 
+exports.getAll = async () => {
+  const products = await ProductModel.find();
+  return products;
+};
+
 exports.updateProduct = async (id, { name, category, price, quantity }) => {
-  const product = await ProductModel.findById(id);
-  product.name = name;
-  product.category = category;
-  product.price = price;
-  product.quantity = quantity;
-  await product.save();
+  const update = { name, category, price, quantity };
+  const product = await ProductModel.findByIdAndUpdate(
+    id,
+    {
+      ...update,
+    },
+    { runValidators: true, new: true }
+  );
+  return product;
 };
 
 exports.deleteProduct = async (id) => {
-  return ProductModel.deleteOne(id);
+  return await ProductModel.findByIdAndDelete(id);
 };
